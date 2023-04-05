@@ -1,40 +1,49 @@
 #include <iostream>
+
 using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-//Buscar caracter en una cadena 
-
-
-char *CadBuscar(char *,char);
+/*Convertir los caracteres alñfanumericos mayusculas en minusculas*/
+int esMayusqs(char c);
+char *CadMinuscula(char *x);
+int esMinuscula(char c);
+char *CadMayuscula(char *x);
 int main() {
+	char cad[]="eSiMe";
+	cout<<"cadena original..."<<cad<<endl;
+	CadMinuscula(cad);
+	cout<<"cadena convertida a minuscula..."<<cad<<endl;
 	
-	char cad[]="ESIME";
-	cout<<"palabra"<<cad<<endl;
-	cout<<"caracter encontrado.."<<CadBuscar(cad,'I')<<endl;
-	return 0;;
+	cout<<"convertida a mayuscula"<<endl;
+	cout<<"convertir "<<cad<<" a mayuscula"<<endl;
+	CadMayuscula(cad);
+	cout<<"cadena convertida..."<<cad<<endl;
+	return 0;
 }
-char *CadBuscar(char *x,char c){
-	
+int esMayusqs(char c){
+	return c>= 'A' && c<='Z';
+}
+int esMinuscula(char c){
+	return c>='a' && c<='z';
+}
+//convertir minuscula
+char *CadMinuscula(char *x){
+	char *aux;
 	while(*x){
-		if(*x==c) return x;
+		if(esMayusqs(*x)){
+			*x=*x+('a'-'A');
+		}
 		x++;
 	}
-	
-	return NULL;
+	return aux;
 }
-/* en pizarron 
-int main(){
- char arr[100];
- cout<<"ingrese"<<endl;
- cin>>arr;
- if(CadBuscar(arr,'o')){
-}esle{
- cout<<"no se encontro cadena"
+//convertir minuscula
+char *CadMayuscula(char *x){
+	char *aux;
+	while(*x){
+		if(esMinuscula(*x)){
+			*x=*x+('A'-'a');
+		}
+		x++;
+	}
+	return aux;
 }
-}
-*/
-//Tarea BUscar cadena dentro de una cadena
-//str
-/*
-char * strstr(char*,char*)
-*/
-
